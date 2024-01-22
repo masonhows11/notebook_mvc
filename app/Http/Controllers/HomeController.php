@@ -19,7 +19,10 @@ class HomeController extends Controller
     public function index()
     {
         $allContact = $this->contactModel->getAll();
-        return view('home');
+        $data = [
+          'contacts' => $allContact
+        ];
+        return view('home',$data);
     }
 
 }
