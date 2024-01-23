@@ -53,7 +53,7 @@
                 <thead>
                 <tr>
                     <th >#</th>
-                    <th >نام</th>
+                    <th >نام کاربری</th>
                     <th >نام  خانوادگی</th>
                     <th >ایمیل</th>
                     <th>موبایل</th>
@@ -61,15 +61,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?= foreach ($contacts as $contact): ?>
+                <?php foreach ($contacts as $contact): ?>
                 <tr>
                     <th><?= $contact['id'] ?></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td><?= $contact['name'] ?></td>
+                    <td><?= $contact['email'] ?></td>
+                    <td><?= $contact['first_name'] ?></td>
+                    <td><?= $contact['mobile'] ?></td>
                     <td><a href="#">حذف</a> <a href="#">ویرایش</a></td>
                 </tr>
-                <?= endforeach; ?>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
