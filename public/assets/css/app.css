@@ -1,6 +1,46 @@
+/*@font-face {
+    font-family: IRANSansWeb;
+    src        : url("./../fonts/iransans/IRANSansWeb_Medium.eot") format('opentype');
+    src        : url("./../fonts/iransans/IRANSansWeb_Medium.ttf") format("truetype"),
+    url("./../fonts/iransans/IRANSansWeb_Medium.woff") format('woff');
+    font-weight: normal;
+}*/
+/*@font-face {
+    font-family: iransans;
+    src        : url("./../fonts/iransans/IRANSansWeb.eot") format('opentype');
+    src        : url("./../fonts/iransans/IRANSansWeb.ttf") format("truetype"),
+    url("./../fonts/iransans/IRANSansWeb.woff") format('woff');
+    font-weight: normal;
+}*/
 
+/*@font-face {
+    font-family: VazirMedium;
+    src        : url("./../fonts/vazir/Vazir-Medium.eot") format('opentype');
+    src        : url("./../fonts/vazir/Vazir-Medium.ttf") format("truetype"),
+    url("./../fonts/vazir/Vazir-Medium.woff") format('woff');
+    font-weight: normal;
+}*/
+
+/*@font-face {
+    font-family: VazirRegular;
+    src        : url("./../fonts/vazir/Vazir-Regular.eot") format('opentype');
+    src        : url("./../fonts/vazir/Vazir-Regular.ttf") format("truetype"),
+    url("./../fonts/vazir/Vazir-Regular.woff") format('woff');
+    font-weight: normal;
+}*/
+
+@font-face {
+    font-family: VazirMediumFD;
+    src        : url("./../../assets/fonts/vazir/Vazir-Medium-FD.woff") format('woff');
+    font-weight: normal;
+}
 body{
-    font-family: sans-serif;
+    background-color:lavenderblush;
+    font-family:'VazirMediumFD',sans-serif;
     font-size: 1.5rem;
     color: tomato;
+
+}
+.navbar-brand{
+    font-size: 1.8rem;
 }
