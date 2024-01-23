@@ -53,6 +53,10 @@ function nice_dump($var)
     echo '</pre>';
 }
 
+//function xss_clean($str){
+//    return filter_var(htmlspecialchars($str),FILTER_SANITIZE_STRING);
+//}
+
 function nice_dd($var)
 {
     nice_dump($var);

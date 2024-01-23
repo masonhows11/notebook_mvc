@@ -29,15 +29,17 @@
 </nav>
 
 <div class="container">
+
     <div class="row">
         <form action="">
             <div class="mb-3">
-                <label for="name" class="form-label">نام کاربری</label>
-                <input type="text" name="search" id="name" class="form-control">
+                <label for="search" class="form-label">نام کاربری</label>
+                <input type="text" name="search" id="search" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">جستجو</button>
         </form>
     </div>
+
     <div class="row mt-5">
         <div class="col-sm-6">
             <form action="/store/user" method="post">
@@ -70,7 +72,7 @@
                 <tr>
                     <th >#</th>
                     <th >نام کاربری</th>
-                    <th >نام  خانوادگی</th>
+                    <th >نام</th>
                     <th >ایمیل</th>
                     <th>موبایل</th>
                     <th>عملیات</th>
@@ -81,8 +83,8 @@
                 <tr>
                     <th><?= $contact['id'] ?></th>
                     <td><?= $contact['name'] ?></td>
-                    <td><?= $contact['email'] ?></td>
                     <td><?= $contact['first_name'] ?></td>
+                    <td><?= $contact['email'] ?></td>
                     <td><?= $contact['mobile'] ?></td>
                     <td><a href="#">حذف</a> <a href="#">ویرایش</a></td>
                 </tr>

@@ -22,17 +22,26 @@ class HomeController extends Controller
 
         global $request;
         $where = ['ORDER' => ["created_at" => "DESC"]];
+        $search_keyword =  $request->inputKey('search');
         if (!is_null($request->inputKey('search'))) {
-           //  $where["name[~]"] = $request->inputKey('search');
-            $where['AND'] = [
-                'OR' => [
-                    "name[~]" => $request->inputKey('search'),
-                    "user_name[~]" => $request->inputKey('search'),
-                    "email[~]" => $request->inputKey('search'),
-                    "mobile[~]" => $request->inputKey('search'),
+          //  var_dump($request->inputKey('search'));
+              $where["name[~]"] = $request->inputKey('search');
+            //            $where['AND'] = [
+            //                'OR' => [
+            //                    "name[~]" => $request->inputKey('search'),
+            //                    "user_name[~]" => $request->inputKey('search'),
+            //                    "email[~]" => $request->inputKey('search'),
+            //                    "mobile[~]" => $request->inputKey('search'),
+            //
+            //                ]
+            //            ];
 
-                ]
-            ];
+            //            $where['OR'] = [
+            //                "name[~]" => $search_keyword,
+            //                "user_name[~]" => $search_keyword,
+            //                "email[~]" => $search_keyword,
+            //                "mobile[~]" => $search_keyword,
+            //            ];
         }
         $allContact = $this->contactModel->get('*', $where);
         $data = [
