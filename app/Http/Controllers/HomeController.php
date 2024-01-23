@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Core\Request;
 use App\Models\Contact;
 
 
@@ -23,6 +24,11 @@ class HomeController extends Controller
           'contacts' => $allContact
         ];
         return view('home',$data);
+    }
+
+    public function store(Request $request)
+    {
+        nice_dump($request);
     }
 
 }

@@ -7,4 +7,6 @@ use App\Http\Middleware\BlockIEMiddleware;
 
 Route::get('/',['HomeController','index'],[BlockFireFoxMiddleware::class,BlockIEMiddleware::class]);
 
+Route::get('/store/user',['HomeController','store']);
+
 
