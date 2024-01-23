@@ -29,6 +29,15 @@
 </nav>
 
 <div class="container">
+    <div class="row">
+        <form action="">
+            <div class="mb-3">
+                <label for="name" class="form-label">نام کاربری</label>
+                <input type="text" name="search" id="name" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">جستجو</button>
+        </form>
+    </div>
     <div class="row mt-5">
         <div class="col-sm-6">
             <form action="/store/user" method="post">
