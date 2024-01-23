@@ -53,9 +53,9 @@ function nice_dump($var)
     echo '</pre>';
 }
 
-//function xss_clean($str){
-//    return filter_var(htmlspecialchars($str),FILTER_SANITIZE_STRING);
-//}
+function xss_clean($str){
+    return filter_var(htmlspecialchars($str),FILTER_SANITIZE_SPECIAL_CHARS);
+}
 
 function nice_dd($var)
 {
