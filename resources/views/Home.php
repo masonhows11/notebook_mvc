@@ -30,8 +30,16 @@
 
 <div class="container">
 
+    <div class="row d-flex justify-content-center align-items-center h-75   alert-message">
+        <div class="col-8 my-2">
+            <div class="alert alert-success text-center" role="alert">
+              کاربر جدید ذخیره شد
+            </div>
+        </div>
+    </div>
 
-    <div class="row mt-5">
+
+    <div class="row mt-2">
         <div class="col-sm-6">
             <div class="row d-flex flex-column">
 
@@ -45,7 +53,7 @@
                     </form>
                 </div>
 
-                <div class="col mt-5">
+                <div class="col mt-2">
                     <form action="<?= site_url('store/user') ?>" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">نام کاربری</label>
