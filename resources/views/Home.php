@@ -35,12 +35,14 @@
         <div class="col-8 my-2">
             <?php if (isset($alreadyExists)): ?>
                 <?php if (isset($alreadyExists) == true): ?>
-                    <div class="alert alert-<?php echo($alert)  ?> text-center" role="alert">
-                        <?php echo($message) ?>
+                    <div class="alert alert-<?php echo($alert)  ?> alert-dismissible fade show" role="alert">
+                        <strong> <?php echo($message) ?></strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php else: ?>
-                    <div class="alert alert-<?php echo($alert)  ?> text-center" role="alert">
-                        <?php echo($message) ?>
+                    <div class="alert alert-<?php echo($alert)  ?> alert-dismissible fade show" role="alert">
+                        <strong>  <?php echo($message) ?></strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>

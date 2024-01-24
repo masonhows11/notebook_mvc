@@ -67,7 +67,7 @@ class HomeController extends Controller
             $allContact = $this->contactModel->get('*', $where);
             $data = [
                 'alreadyExists' => true,
-                'message' => 'کاربری با مشخصات وارد شده وجود دارد',
+                'message' => 'کاربری با مشخصات وارد شده  وجود دارد',
                 'alert' => 'danger',
                 'contacts' => $allContact
             ];
