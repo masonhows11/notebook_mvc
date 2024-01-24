@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed72e02f-e814-46e1-82e7-62ae3ccb84ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Routing/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Routing/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Contracts/MysqlBaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contracts/MysqlBaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +58,17 @@
       <option name="presentableId" value="Default" />
       <updated>1706065353311</updated>
       <workItem from="1706065357934" duration="952000" />
-      <workItem from="1706072018640" duration="2991000" />
+      <workItem from="1706072018640" duration="7625000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1706078740030">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1706078740030" />
   </component>
 </project>

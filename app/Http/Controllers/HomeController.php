@@ -57,16 +57,28 @@ class HomeController extends Controller
     {
         global $request;
 
-       $count =  $this->contactModel->count(['mobile' => $request->inputKey('mobile')]);
-       if($count > 1){
-           die('');
-       }
-        $this->contactModel->create([
+
+        $data['alreadyExists'] = false;
+        // var_dump($request->inputKey('mobile'));
+        $count = $this->contactModel->count(['mobile' => $request->inputKey('mobile')]);
+
+        if ($count) {
+            $data['alreadyExists'] = true;
+            var_dump($data);
+        }
+
+
+        $user = $this->contactModel->create([
             'name' => $request->inputKey('name'),
             'firs_name' => $request->inputKey('first_name'),
             'email' => $request->inputKey('email'),
             'mobile' => $request->inputKey('mobile')
         ]);
+
+        var_dump($user);
+        // $data['user'] = $user;
+        var_dump($data);
+        return view('home', $data);
 
     }
 
