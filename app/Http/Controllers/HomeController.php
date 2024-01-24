@@ -74,13 +74,15 @@ class HomeController extends Controller
 
             $where = ['ORDER' => ["created_at" => "DESC"]];
             $allContact = $this->contactModel->get('*', $where);
-            
+
             $data  ['alreadyExists'] = false;
             $data  ['contacts'] = $allContact;
             $data  ['message'] = "ایمیل وارد شده معتبر نمی باشد";
             $data  ['alert'] = 'danger';
             view('home', $data);
+
         }
+
         $user = $this->contactModel->create([
             'name' => $request->inputKey('name'),
             'first_name' => $request->inputKey('first_name'),

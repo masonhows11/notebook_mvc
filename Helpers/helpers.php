@@ -32,6 +32,7 @@ function view($path, $data = [])
     $path = str_replace('.', '/', $path);
     $view_full_path = BASE_PATH . "resources/views/$path.php";
     include_once $view_full_path;
+    die();
 
 }
 

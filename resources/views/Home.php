@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="col mt-2">
-                    <form action="<?= site_url('store/user') ?>" method="post" novalidate>
+                    <form action="<?= site_url('store/user') ?>" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">نام کاربری</label>
                             <input type="text" name="name" id="name" class="form-control" required>
