@@ -68,17 +68,17 @@ class HomeController extends Controller
                 'contacts' => $allContact
             ];
             view('home', $data);
-            die();
         }
         if (Validation::is_valid_email($request->inputKey('email'))) {
 
             $where = ['ORDER' => ["created_at" => "DESC"]];
             $allContact = $this->contactModel->get('*', $where);
 
-            $data  ['alreadyExists'] = false;
-            $data  ['contacts'] = $allContact;
-            $data  ['message'] = "ایمیل وارد شده معتبر نمی باشد";
-            $data  ['alert'] = 'danger';
+            $data = ['alreadyExists' =>true,
+                    'message' =>  "ایمیل وارد شده معتبر نمی باشد",
+                    'alert' => 'danger',
+                    'contacts' => $allContact];
+            
             view('home', $data);
 
         }
@@ -94,11 +94,10 @@ class HomeController extends Controller
         $where = ['ORDER' => ["created_at" => "DESC"]];
         $allContact = $this->contactModel->get('*', $where);
 
-        $data  ['alreadyExists'] = false;
-        $data  ['user_id'] = $user;
-        $data  ['message'] = " کاربر جدید با شناسه  $user ایجاد شد ";
-        $data  ['alert'] = 'success';
-        $data  ['contacts'] = $allContact;
+        $data = ['alreadyExists' => false,
+                'message' => " کاربر جدید با شناسه $user ایجاد شد ",
+                'alert' => 'success',
+                'contacts' => $allContact];
         view('home', $data);
 
     }
