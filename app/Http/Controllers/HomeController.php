@@ -65,6 +65,7 @@ class HomeController extends Controller
         if ($count) {
             $data['alreadyExists'] = true;
             var_dump($data);
+            die();
         }
 
 
@@ -74,11 +75,11 @@ class HomeController extends Controller
             'email' => $request->inputKey('email'),
             'mobile' => $request->inputKey('mobile')
         ]);
-
+        var_dump('mobile not found');
         var_dump($user);
         // $data['user'] = $user;
         var_dump($data);
-        return view('home', $data);
+        view('home', $data);
 
     }
 
