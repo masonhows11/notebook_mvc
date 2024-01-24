@@ -71,9 +71,16 @@ class HomeController extends Controller
             'name' => $request->inputKey('name'),
             'first_name' => $request->inputKey('first_name'),
             'email' => $request->inputKey('email'),
-            'mobile' => $request->inputKey('mobile')
+            'mobile' => $request->inputKey('mobile'),
+            'password' => $request->inputKey('password')
         ]);
+        
 
+        $where = ['ORDER' => ["created_at" => "DESC"]];
+        $allContact = $this->contactModel->get('*', $where);
+        $data = [
+            'contacts' => $allContact
+        ];
         view('home', $data);
 
     }
