@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ed72e02f-e814-46e1-82e7-62ae3ccb84ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Utilities/Validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Home.php" afterDir="false" />
     </list>
@@ -60,14 +80,29 @@
       <workItem from="1706072018640" duration="8268000" />
       <workItem from="1706082412741" duration="275000" />
       <workItem from="1706085794313" duration="2171000" />
-      <workItem from="1706105596060" duration="2174000" />
+      <workItem from="1706105596060" duration="5023000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="749" y="227" key="NewPhpClassDialog" timestamp="1706108803254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="749" y="227" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1706108803254" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1706078740030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -33,15 +33,16 @@
 
     <div class="row d-flex justify-content-center align-items-center h-75   alert-message">
         <div class="col-8 my-2">
+
             <?php if (isset($alreadyExists)): ?>
                 <?php if (isset($alreadyExists) == true): ?>
                     <div class="alert alert-<?php echo($alert)  ?> alert-dismissible fade show" role="alert">
-                        <strong> <?php echo($message) ?></strong>
+                        <strong> <?php echo($message) ?> </strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php else: ?>
                     <div class="alert alert-<?php echo($alert)  ?> alert-dismissible fade show" role="alert">
-                        <strong>  <?php echo($message) ?></strong>
+                        <strong>  <?php echo($message) ?> </strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>
@@ -65,26 +66,26 @@
                 </div>
 
                 <div class="col mt-2">
-                    <form action="<?= site_url('store/user') ?>" method="post">
+                    <form action="<?= site_url('store/user') ?>" method="post" novalidate>
                         <div class="mb-3">
                             <label for="name" class="form-label">نام کاربری</label>
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="first_name" class="form-label">نام</label>
-                            <input type="text" name="first_name" id="first_name" class="form-control">
+                            <input type="text" name="first_name" id="first_name" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">ایمیل</label>
-                            <input type="email" name="email" class="form-control" id="email">
+                            <input type="email" name="email"  class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="mobile" class="form-label">موبایل</label>
-                            <input type="text" name="mobile" class="form-control" id="mobile">
+                            <input type="text" name="mobile" class="form-control" id="mobile" required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">رمز عبور</label>
-                            <input type="password" name="password" class="form-control" id="password">
+                            <input type="password" name="password" class="form-control" id="password" required>
                         </div>
                         <button type="submit" class="btn btn-primary">ذخیره</button>
                     </form>

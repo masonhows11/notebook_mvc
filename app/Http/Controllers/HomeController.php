@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Core\Request;
 use App\Models\Contact;
+use App\Utilities\Validation;
 
 
 class HomeController extends Controller
@@ -56,11 +57,6 @@ class HomeController extends Controller
     public function store()
     {
         global $request;
-
-
-        //        $data['alreadyExists'] = false;
-        //        $data['alreadyExists'] = true;
-        // var_dump($request->inputKey('mobile'));
         $count = $this->contactModel->count(['mobile' => $request->inputKey('mobile')]);
         if ($count) {
             $where = ['ORDER' => ["created_at" => "DESC"]];
@@ -74,7 +70,17 @@ class HomeController extends Controller
             view('home', $data);
             die();
         }
+        if (Validation::is_valid_email($request->inputKey('email'))) {
 
+            $where = ['ORDER' => ["created_at" => "DESC"]];
+            $allContact = $this->contactModel->get('*', $where);
+            
+            $data  ['alreadyExists'] = false;
+            $data  ['contacts'] = $allContact;
+            $data  ['message'] = "ایمیل وارد شده معتبر نمی باشد";
+            $data  ['alert'] = 'danger';
+            view('home', $data);
+        }
         $user = $this->contactModel->create([
             'name' => $request->inputKey('name'),
             'first_name' => $request->inputKey('first_name'),
@@ -82,18 +88,15 @@ class HomeController extends Controller
             'mobile' => $request->inputKey('mobile'),
             'password' => $request->inputKey('password')
         ]);
-        $user_id = $user;
-
 
         $where = ['ORDER' => ["created_at" => "DESC"]];
         $allContact = $this->contactModel->get('*', $where);
-        $data = [
-            'user_id' => $user_id,
-            'alreadyExists' => false,
-            'message' => 'کاربری جدید با موفقیت ایجاد شد',
-            'alert' => 'success',
-            'contacts' => $allContact
-        ];
+
+        $data  ['alreadyExists'] = false;
+        $data  ['user_id'] = $user;
+        $data  ['message'] = " کاربر جدید با شناسه  $user ایجاد شد ";
+        $data  ['alert'] = 'success';
+        $data  ['contacts'] = $allContact;
         view('home', $data);
 
     }
