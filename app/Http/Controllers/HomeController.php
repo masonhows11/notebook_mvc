@@ -78,7 +78,7 @@ class HomeController extends Controller
                     'message' =>  "ایمیل وارد شده معتبر نمی باشد",
                     'alert' => 'danger',
                     'contacts' => $allContact];
-            
+
             view('home', $data);
 
         }
@@ -99,6 +99,12 @@ class HomeController extends Controller
                 'alert' => 'success',
                 'contacts' => $allContact];
         view('home', $data);
+
+    }
+
+    public function delete(){
+        global $request;
+        var_dump($request);
 
     }
 

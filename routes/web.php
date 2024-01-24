@@ -9,4 +9,6 @@ Route::get('/',['HomeController','index'],[BlockFireFoxMiddleware::class,BlockIE
 
 Route::post('/store/user',['HomeController','store']);
 
+Route::post('/delete/user',['HomeController','delete']);
+
 
