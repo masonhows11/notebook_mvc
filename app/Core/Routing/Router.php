@@ -37,6 +37,8 @@ class Router
 
     private function run_route_middleware()
     {
+        if (is_null($this->current_route))
+            return;
         $middleware = $this->current_route['middleware'];
         foreach ($middleware as $middleware_class) {
             $middlewareObject = new $middleware_class;
@@ -58,7 +60,7 @@ class Router
         //        return null;
         foreach ($this->routes as $route) {
             if (!in_array($request->getMethod(), $route['methods'])) {
-               continue;
+                continue;
             }
             if ($this->regex_match_route_pattern($route)) {
                 return $route;
@@ -89,6 +91,7 @@ class Router
     {
 
     }
+
     public function dispatch404()
     {
         header("HTTP/1.0 404 Not Found");
@@ -96,6 +99,7 @@ class Router
         view('errors.404');
         die();
     }
+
     public function run()
     {
         try {

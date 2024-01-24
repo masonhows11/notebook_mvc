@@ -103,7 +103,8 @@
                     <th>نام</th>
                     <th>ایمیل</th>
                     <th>موبایل</th>
-                    <th>عملیات</th>
+                    <th>حذف</th>
+                    <th>ویرایش</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -114,7 +115,8 @@
                         <td><?= $contact['first_name'] ?></td>
                         <td><?= $contact['email'] ?></td>
                         <td><?= $contact['mobile'] ?></td>
-                        <td><a href="#">حذف</a> <a href="#">ویرایش</a></td>
+                        <td><a href="<?php echo site_url("delete/user/{$contact['id']}") ?>">حذف</a></td>
+                        <td><a href="#">ویرایش</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

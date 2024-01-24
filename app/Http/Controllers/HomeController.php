@@ -104,8 +104,8 @@ class HomeController extends Controller
 
     public function delete(){
         global $request;
-        var_dump($request);
-
+       $id = $request->get_route_param('id');
+        var_dump($id);
     }
 
 }
