@@ -30,42 +30,50 @@
 
 <div class="container">
 
-    <div class="row">
-        <form action="">
-            <div class="mb-3">
-                <label for="search" class="form-label">نام کاربری</label>
-                <input type="text" name="search" id="search" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">جستجو</button>
-        </form>
-    </div>
 
     <div class="row mt-5">
         <div class="col-sm-6">
-            <form action="<?= site_url('store/user') ?>" method="post">
-                <div class="mb-3">
-                    <label for="name" class="form-label">نام کاربری</label>
-                    <input type="text" name="name" id="name" class="form-control">
+            <div class="row d-flex flex-column">
+
+                <div class="col">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="search" class="form-label">نام کاربری</label>
+                            <input type="text" name="search" id="search" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">جستجو</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="first_name" class="form-label">نام</label>
-                    <input type="text" name="first_name" id="first_name" class="form-control">
+
+                <div class="col mt-5">
+                    <form action="<?= site_url('store/user') ?>" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">نام کاربری</label>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">نام</label>
+                            <input type="text" name="first_name" id="first_name" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">ایمیل</label>
+                            <input type="email" name="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mobile" class="form-label">موبایل</label>
+                            <input type="text" name="mobile" class="form-control" id="mobile">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">رمز عبور</label>
+                            <input type="password" name="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">ذخیره</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">ایمیل</label>
-                    <input type="email" name="email" class="form-control" id="email">
-                </div>
-                <div class="mb-3">
-                    <label for="mobile" class="form-label">موبایل</label>
-                    <input type="text" name="mobile" class="form-control" id="mobile">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">رمز عبور</label>
-                    <input type="password" name="password" class="form-control" id="password">
-                </div>
-                <button type="submit" class="btn btn-primary">ذخیره</button>
-            </form>
+            </div>
+
         </div>
+
         <div class="col-sm-6">
             <table class="table">
                 <thead>
