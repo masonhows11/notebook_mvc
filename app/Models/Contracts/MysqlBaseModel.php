@@ -143,4 +143,12 @@ class MysqlBaseModel extends BaseModel
         $result = $this->connection->delete($this->table, $where);
         return $result->rowCount();
     }
+
+    public function count($column,array $where){
+        return $this->connection->count($this->table,$column,$where);
+    }
+
+    public function sum($column,array $where){
+        return $this->connection->sum($this->table,$column,$where);
+    }
 }

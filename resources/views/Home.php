@@ -53,15 +53,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">ایمیل</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" name="email" class="form-control" id="email">
                 </div>
                 <div class="mb-3">
                     <label for="mobile" class="form-label">موبایل</label>
-                    <input type="text" class="form-control" id="mobile">
+                    <input type="text" name="mobile" class="form-control" id="mobile">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">رمز عبور</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" name="password" class="form-control" id="password">
                 </div>
                 <button type="submit" class="btn btn-primary">ذخیره</button>
             </form>

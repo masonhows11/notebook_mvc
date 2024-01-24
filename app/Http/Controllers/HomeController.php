@@ -53,9 +53,21 @@ class HomeController extends Controller
         return view('home', $data);
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        nice_dump($request);
+        global $request;
+
+       $count =  $this->contactModel->count(['mobile' => $request->inputKey('mobile')]);
+       if($count > 1){
+           die('');
+       }
+        $this->contactModel->create([
+            'name' => $request->inputKey('name'),
+            'firs_name' => $request->inputKey('first_name'),
+            'email' => $request->inputKey('email'),
+            'mobile' => $request->inputKey('mobile')
+        ]);
+
     }
 
 }
