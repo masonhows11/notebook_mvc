@@ -25,17 +25,17 @@ class HomeController extends Controller
         $search_keyword = $request->inputKey('search');
         if (!is_null($request->inputKey('search'))) {
             // var_dump($request->inputKey('search'));
-            // $where["name[~]"] = $request->inputKey('search');
+            $where["name[~]"] = $request->inputKey('search');
 
             // in this condition we store condition query in $where array variable
-            $where['AND'] = [
-                'OR' => [
-                    "name[~]" => $search_keyword,
-                    "user_name[~]" => $search_keyword,
-                    "email[~]" => $search_keyword,
-                    "mobile[~]" => $search_keyword,
-                ]
-            ];
+            //            $where['AND'] = [
+            //                'OR' => [
+            //                    "name[~]" => $search_keyword,
+            //                    "user_name[~]" => $search_keyword,
+            //                    "email[~]" => $search_keyword,
+            //                    "mobile[~]" => $search_keyword,
+            //                ]
+            //            ];
 
             //            $where['OR'] = [
             //                "name[~]" => $search_keyword,
@@ -43,8 +43,8 @@ class HomeController extends Controller
             //                "email[~]" => $search_keyword,
             //                "mobile[~]" => $search_keyword,
             //            ];
-            $allContact = $this->contactModel->get('*', $where);
-            var_dump($allContact);
+            // $allContact = $this->contactModel->get('*', $where);
+            //var_dump($allContact);
         }
         $allContact = $this->contactModel->get('*', $where);
         $data = [

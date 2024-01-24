@@ -42,7 +42,7 @@
 
     <div class="row mt-5">
         <div class="col-sm-6">
-            <form action="/store/user" method="post">
+            <form action="<?= site_url('store/user') ?>" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">نام کاربری</label>
                     <input type="text" name="name" id="name" class="form-control">
