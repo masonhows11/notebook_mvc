@@ -58,11 +58,19 @@ class HomeController extends Controller
         global $request;
 
 
-        $data['alreadyExists'] = false;
+        //        $data['alreadyExists'] = false;
+        //        $data['alreadyExists'] = true;
         // var_dump($request->inputKey('mobile'));
         $count = $this->contactModel->count(['mobile' => $request->inputKey('mobile')]);
         if ($count) {
-            $data['alreadyExists'] = true;
+            $where = ['ORDER' => ["created_at" => "DESC"]];
+            $allContact = $this->contactModel->get('*', $where);
+            $data = [
+                'alreadyExists' => true,
+                'message' => 'کاربری با مشخصات وارد شده وجود دارد',
+                'alert' => 'danger',
+                'contacts' => $allContact
+            ];
             view('home', $data);
             die();
         }
@@ -74,11 +82,16 @@ class HomeController extends Controller
             'mobile' => $request->inputKey('mobile'),
             'password' => $request->inputKey('password')
         ]);
+        $user_id = $user;
 
 
         $where = ['ORDER' => ["created_at" => "DESC"]];
         $allContact = $this->contactModel->get('*', $where);
         $data = [
+            'user_id' => $user_id,
+            'alreadyExists' => false,
+            'message' => 'کاربری جدید با موفقیت ایجاد شد',
+            'alert' => 'success',
             'contacts' => $allContact
         ];
         view('home', $data);

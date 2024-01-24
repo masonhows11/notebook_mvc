@@ -6,13 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-    <?php include  BASE_PATH.'resources/views/include/styles.php';  ?>
+    <?php include BASE_PATH . 'resources/views/include/styles.php'; ?>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">پردازش همکاران پارسه</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,9 +33,17 @@
 
     <div class="row d-flex justify-content-center align-items-center h-75   alert-message">
         <div class="col-8 my-2">
-            <div class="alert alert-success text-center" role="alert">
-              کاربر جدید ذخیره شد
-            </div>
+            <?php if (isset($alreadyExists)): ?>
+                <?php if (isset($alreadyExists) == true): ?>
+                    <div class="alert alert-<?php echo($alert)  ?> text-center" role="alert">
+                        <?php echo($message) ?>
+                    </div>
+                <?php else: ?>
+                    <div class="alert alert-<?php echo($alert)  ?> text-center" role="alert">
+                        <?php echo($message) ?>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -86,24 +95,24 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th >#</th>
-                    <th >نام کاربری</th>
-                    <th >نام</th>
-                    <th >ایمیل</th>
+                    <th>#</th>
+                    <th>نام کاربری</th>
+                    <th>نام</th>
+                    <th>ایمیل</th>
                     <th>موبایل</th>
                     <th>عملیات</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($contacts as $contact): ?>
-                <tr>
-                    <th><?= $contact['id'] ?></th>
-                    <td><?= $contact['name'] ?></td>
-                    <td><?= $contact['first_name'] ?></td>
-                    <td><?= $contact['email'] ?></td>
-                    <td><?= $contact['mobile'] ?></td>
-                    <td><a href="#">حذف</a> <a href="#">ویرایش</a></td>
-                </tr>
+                    <tr>
+                        <th><?= $contact['id'] ?></th>
+                        <td><?= $contact['name'] ?></td>
+                        <td><?= $contact['first_name'] ?></td>
+                        <td><?= $contact['email'] ?></td>
+                        <td><?= $contact['mobile'] ?></td>
+                        <td><a href="#">حذف</a> <a href="#">ویرایش</a></td>
+                    </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
@@ -112,6 +121,6 @@
 </div>
 
 
-    <?php include BASE_PATH.'resources/views/include/scripts.php';  ?>
+<?php include BASE_PATH . 'resources/views/include/scripts.php'; ?>
 </body>
 </html>
