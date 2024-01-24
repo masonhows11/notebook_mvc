@@ -36,13 +36,27 @@
 
             <?php if (isset($alreadyExists)): ?>
                 <?php if (isset($alreadyExists) == true): ?>
-                    <div class="alert alert-<?php echo($alert)  ?> alert-dismissible fade show" role="alert">
+                    <div class="alert alert-<?php echo($alert) ?> alert-dismissible fade show" role="alert">
                         <strong> <?php echo($message) ?> </strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php else: ?>
-                    <div class="alert alert-<?php echo($alert)  ?> alert-dismissible fade show" role="alert">
+                    <div class="alert alert-<?php echo($alert) ?> alert-dismissible fade show" role="alert">
                         <strong>  <?php echo($message) ?> </strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if (isset($result)): ?>
+                <?php if (($result) == 1): ?>
+                    <div class="alert alert-<?php echo($alert) ?> alert-dismissible fade show" role="alert">
+                        <strong> <?php echo($message) ?> </strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php else: ?>
+                    <div class="alert alert-<?php echo($alert) ?> alert-dismissible fade show" role="alert">
+                        <strong> <?php echo($message) ?> </strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>
@@ -77,7 +91,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">ایمیل</label>
-                            <input type="email" name="email"  class="form-control" id="email" required>
+                            <input type="email" name="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="mobile" class="form-label">موبایل</label>

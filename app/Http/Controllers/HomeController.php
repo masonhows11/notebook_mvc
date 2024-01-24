@@ -74,10 +74,10 @@ class HomeController extends Controller
             $where = ['ORDER' => ["created_at" => "DESC"]];
             $allContact = $this->contactModel->get('*', $where);
 
-            $data = ['alreadyExists' =>true,
-                    'message' =>  "ایمیل وارد شده معتبر نمی باشد",
-                    'alert' => 'danger',
-                    'contacts' => $allContact];
+            $data = ['alreadyExists' => true,
+                'message' => "ایمیل وارد شده معتبر نمی باشد",
+                'alert' => 'danger',
+                'contacts' => $allContact];
 
             view('home', $data);
 
@@ -95,17 +95,35 @@ class HomeController extends Controller
         $allContact = $this->contactModel->get('*', $where);
 
         $data = ['alreadyExists' => false,
-                'message' => " کاربر جدید با شناسه $user ایجاد شد ",
-                'alert' => 'success',
-                'contacts' => $allContact];
+            'message' => " کاربر جدید با شناسه $user ایجاد شد ",
+            'alert' => 'success',
+            'contacts' => $allContact];
         view('home', $data);
 
     }
 
-    public function delete(){
+    public function delete()
+    {
         global $request;
-       $id = $request->get_route_param('id');
-        var_dump($id);
+        $id = $request->get_route_param('id');
+        $result = $this->contactModel->delete(['id' => $id]);
+        $where = ['ORDER' => ["created_at" => "DESC"]];
+        $allContact = $this->contactModel->get('*', $where);
+
+        if ($result == 1) {
+            $data = [
+                'result' => $result,
+                'message' => "کاربر مورد با موفقیت حذف شد.",
+                'alert' => 'success',
+                'contacts' => $allContact];
+        } else {
+            $data = [
+                'result' => $result,
+                'message' => "حذف انجلم نشد.",
+                'alert' => 'warning',
+                'contacts' => $allContact];
+        }
+        view('home', $data);
     }
 
 }
